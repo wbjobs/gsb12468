@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>i18n Fallback Demo</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header>
+  <h1 data-i18n="header.title">i18n Fallback Demo</h1>
+  <p data-i18n="header.subtitle"></p>
+  <nav id="lang-switch" aria-label="language switcher"></nav>
+</header>
+
+<main>
+  <nav class="card nav-card">
+    <span data-i18n="nav.home"></span>
+    <span data-i18n="nav.products"></span>
+    <span data-i18n="nav.settings"></span>
+    <span data-i18n="nav.about"></span>
+  </nav>
+
+  <section class="card">
+    <p id="demo-greeting" class="big"></p>
+    <p id="demo-welcome"></p>
+    <div class="stats">
+      <div><label data-i18n="stats.visitors"></label><strong id="fmt-number"></strong></div>
+      <div><label data-i18n="stats.revenue"></label><strong id="fmt-currency"></strong></div>
+      <div><label data-i18n="stats.growth"></label><strong id="fmt-percent"></strong></div>
+    </div>
+    <button class="primary" data-i18n="cart.checkout"></button>
+  </section>
+
+  <section class="card">
+    <h2 data-i18n="panel.plural"></h2>
+    <table>
+      <thead><tr><th>count</th><th>cart.items</th><th>inbox.messages</th></tr></thead>
+      <tbody id="plural-body"></tbody>
+    </table>
+  </section>
+
+  <section class="card">
+    <h2 data-i18n="panel.format"></h2>
+    <table>
+      <tbody>
+        <tr><td>DateTimeFormat</td><td id="fmt-date"></td></tr>
+        <tr><td>RelativeTime −5min</td><td id="fmt-rel-1"></td></tr>
+        <tr><td>RelativeTime −3day</td><td id="fmt-rel-2"></td></tr>
+        <tr><td>RelativeTime +2week</td><td id="fmt-rel-3"></td></tr>
+        <tr><td>RelativeTime −1year</td><td id="fmt-rel-4"></td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="card">
+    <h2 data-i18n="panel.support"></h2>
+    <table><tbody id="support-body"></tbody></table>
+    <h3>Worker 缺失分析（vs 默认语言 en）</h3>
+    <ul id="worker-result"></ul>
+  </section>
+
+  <section class="card">
+    <h2 data-i18n="panel.missing"></h2>
+    <button id="clear-missing" class="ghost">清空</button>
+    <table>
+      <thead><tr><th>key</th><th>lang</th><th>time</th></tr></thead>
+      <tbody id="missing-body"></tbody>
+    </table>
+  </section>
+
+  <section class="card">
+    <h2 data-i18n="panel.fallbackLog"></h2>
+    <button id="clear-fallbacks" class="ghost">清空</button>
+    <table>
+      <thead><tr><th>key</th><th>chain</th><th>reason</th><th>time</th></tr></thead>
+      <tbody id="fallback-body"></tbody>
+    </table>
+  </section>
+</main>
+
+<footer>
+  <span data-i18n="footer.madeWith"></span> · <span data-i18n="footer.copyright"></span>
+</footer>
+
+<script src="locales/en.js"></script>
+<script src="locales/zh-CN.js"></script>
+<script src="locales/ja.js"></script>
+<script src="locales/fr.js"></script>
+<script src="locales/ru.js"></script>
+<script src="js/intl-support.js"></script>
+<script src="js/i18n.js"></script>
+<script src="js/store.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: -apple-system, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+  background: #f4f6fa;
+  color: #1f2937;
+}
+header {
+  background: linear-gradient(135deg, #3b5bfd, #6a3bfd);
+  color: #fff;
+  padding: 28px 24px 20px;
+}
+header h1 { margin: 0 0 6px; font-size: 24px; }
+header p { margin: 0 0 14px; opacity: .85; }
+#lang-switch { display: flex; gap: 8px; flex-wrap: wrap; }
+#lang-switch button {
+  border: 1px solid rgba(255,255,255,.5);
+  background: transparent;
+  color: #fff;
+  padding: 6px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background .15s;
+}
+#lang-switch button.active { background: #fff; color: #3b5bfd; font-weight: 600; }
+main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px 16px 40px;
+  display: grid;
+  gap: 16px;
+}
+.card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 18px 20px;
+  box-shadow: 0 1px 4px rgba(0,0,0,.06);
+}
+.card h2 { margin: 0 0 12px; font-size: 17px; }
+.card h3 { margin: 14px 0 8px; font-size: 14px; color: #6b7280; }
+.nav-card { display: flex; gap: 22px; font-weight: 600; color: #3b5bfd; }
+.big { font-size: 20px; font-weight: 600; margin: 4px 0; }
+.stats { display: flex; gap: 32px; margin: 14px 0; flex-wrap: wrap; }
+.stats label { display: block; font-size: 13px; color: #6b7280; }
+.stats strong { font-size: 20px; }
+button.primary {
+  background: #3b5bfd; color: #fff; border: 0; border-radius: 8px;
+  padding: 9px 22px; font-size: 14px; cursor: pointer;
+}
+button.ghost {
+  float: right; background: none; border: 1px solid #d1d5db; border-radius: 6px;
+  padding: 4px 12px; cursor: pointer; color: #6b7280; font-size: 12px;
+}
+table { width: 100%; border-collapse: collapse; font-size: 14px; }
+th, td { text-align: left; padding: 7px 10px; border-bottom: 1px solid #eef0f4; }
+th { color: #6b7280; font-weight: 600; font-size: 13px; }
+td.ok { color: #059669; }
+td.bad { color: #d97706; }
+td.empty { color: #9ca3af; }
+code { background: #f1f3f9; padding: 1px 6px; border-radius: 4px; font-size: 13px; }
+#worker-result { margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.9; }
+footer { text-align: center; color: #9ca3af; font-size: 13px; padding: 20px; }
