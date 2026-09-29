@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>i18n Demo — 多语言 / 回退 / Intl 降级</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="card">
+    <h1 data-i18n="nav.title">i18n Demo</h1>
+    <div class="switcher-row">
+      <div id="lang-switcher" class="lang-switcher"></div>
+      <span id="load-status" class="load-status"></span>
+    </div>
+    <p class="chain">回退链：<span id="fallback-chain"></span></p>
+    <label class="simulate">
+      <input type="checkbox" id="simulate-no-intl">
+      模拟浏览器不支持 Intl（演示降级）
+    </label>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>Intl 能力检测</h2>
+      <table class="caps"><tbody id="caps-table"></tbody></table>
+      <p class="muted">持久化：<span id="storage-mode"></span></p>
+    </section>
+
+    <section class="card">
+      <h2>文案（嵌套 key / 插值 / 缺失回退）</h2>
+      <nav class="demo-nav">
+        <button data-i18n="nav.home">Home</button>
+        <button data-i18n="nav.about">About</button>
+        <button data-i18n="nav.settings">Settings</button>
+      </nav>
+      <p>
+        <label>Name: <input id="name-input" type="text" value="World"></label>
+      </p>
+      <p id="demo-hello" class="demo-line"></p>
+      <p id="demo-welcome" class="demo-line"></p>
+      <p id="demo-paragraph" class="demo-line"></p>
+      <p class="demo-line"><span class="badge">回退演示</span> <span id="demo-tip"></span></p>
+      <p class="demo-line"><span class="badge">回退演示</span> <span id="demo-footer"></span></p>
+      <p class="demo-line">
+        <span class="badge badge-key">key 回退</span>
+        <code>demo.nonexistent.key</code> → <span id="demo-nonexistent"></span>
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>复数规则</h2>
+      <p>
+        <input id="count-range" type="range" min="0" max="120" value="1">
+        <strong id="count-value">1</strong>
+        <span id="quick-counts">
+          <button data-count="0">0</button>
+          <button data-count="1">1</button>
+          <button data-count="2">2</button>
+          <button data-count="3">3</button>
+          <button data-count="5">5</button>
+          <button data-count="11">11</button>
+          <button data-count="21">21</button>
+          <button data-count="100">100</button>
+        </span>
+      </p>
+      <p class="muted">复数类别：<code id="plural-category"></code></p>
+      <p id="plural-inbox" class="demo-line"></p>
+      <p id="plural-cart" class="demo-line"></p>
+    </section>
+
+    <section class="card">
+      <h2>数字 / 日期 / 相对时间</h2>
+      <p>数字：<strong id="fmt-number"></strong></p>
+      <p>日期：<strong id="fmt-date"></strong></p>
+      <ul id="fmt-relative"></ul>
+    </section>
+
+    <section class="card">
+      <h2>缺失文案列表 <button id="clear-missing" class="small">清空</button></h2>
+      <table class="log">
+        <thead><tr><th>key</th><th>语言</th><th>时间</th></tr></thead>
+        <tbody id="missing-table"></tbody>
+      </table>
+    </section>
+
+    <section class="card">
+      <h2>回退记录 <button id="clear-fallbacks" class="small">清空</button></h2>
+      <table class="log">
+        <thead><tr><th>key</th><th>回退路径</th><th>时间</th></tr></thead>
+        <tbody id="fallback-table"></tbody>
+      </table>
+    </section>
+  </main>
+
+  <script src="js/locales.js"></script>
+  <script src="js/i18n-core.js"></script>
+  <script src="js/intl-support.js"></script>
+  <script src="js/db.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 24px;
+  font-family: system-ui, -apple-system, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+  background: #f3f5f7;
+  color: #1f2933;
+  line-height: 1.6;
+}
+
+.card {
+  max-width: 860px;
+  margin: 0 auto 16px;
+  padding: 16px 20px;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.05);
+}
+
+h1 { margin: 0 0 12px; font-size: 22px; }
+h2 { margin: 0 0 12px; font-size: 16px; color: #334155; }
+
+.lang-switcher { display: inline-flex; flex-wrap: wrap; gap: 8px; }
+.lang-switcher button,
+.demo-nav button,
+#quick-counts button,
+button.small {
+  padding: 6px 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  background: #fff;
+  cursor: pointer;
+  font-size: 14px;
+}
+.lang-switcher button:hover,
+.demo-nav button:hover { background: #f1f5f9; }
+.lang-switcher button.active {
+  background: #2563eb;
+  border-color: #2563eb;
+  color: #fff;
+}
+
+.switcher-row { display: flex; align-items: center; gap: 12px; }
+.load-status { color: #2563eb; font-weight: 600; min-width: 16px; }
+
+.chain { margin: 10px 0 0; font-size: 13px; color: #64748b; }
+.simulate { display: inline-block; margin-top: 8px; font-size: 13px; color: #b45309; }
+
+.demo-nav { display: flex; gap: 8px; margin-bottom: 12px; }
+.demo-line { margin: 6px 0; }
+.muted { color: #64748b; font-size: 13px; }
+.empty { color: #94a3b8; text-align: center; }
+
+.badge {
+  display: inline-block;
+  padding: 1px 8px;
+  border-radius: 999px;
+  background: #fef3c7;
+  color: #92400e;
+  font-size: 12px;
+}
+.badge-key { background: #fee2e2; color: #991b1b; }
+
+table.caps, table.log {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+table.caps td, table.log th, table.log td {
+  padding: 6px 10px;
+  border-bottom: 1px solid #e2e8f0;
+  text-align: start;
+}
+table.log th { color: #64748b; font-weight: 600; }
+td.ok { color: #15803d; }
+td.bad { color: #b91c1c; }
+
+code {
+  padding: 1px 5px;
+  border-radius: 4px;
+  background: #f1f5f9;
+  font-size: 13px;
+}
+
+input[type="text"] {
+  padding: 5px 8px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+}
+input[type="range"] { vertical-align: middle; width: 220px; }
+
+#quick-counts { margin-inline-start: 12px; }
+#quick-counts button { padding: 2px 8px; margin-inline-start: 4px; font-size: 12px; }
+
+ul#fmt-relative { margin: 6px 0; padding-inline-start: 20px; }
+
+/* 切换语言时不清空内容，仅轻微降低透明度提示加载中，避免闪烁 */
+body.switching main { opacity: 0.85; }
+main { transition: opacity 0.1s ease; }
